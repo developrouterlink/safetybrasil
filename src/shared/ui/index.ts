@@ -3,3 +3,4 @@ export * from './button';
 export * from './card';
 export * from './header';
 export * from './hero-friday';
+export * from './services-grid';

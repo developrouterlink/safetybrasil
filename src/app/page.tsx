@@ -1,4 +1,4 @@
-import { Header, HeroFriday } from '@shared/ui';
+import { Header, HeroFriday, ServicesGrid } from '@shared/ui';
 
 export default function HomePage() {
   return (
@@ -7,8 +7,9 @@ export default function HomePage() {
         <Header />
       </div>
 
-      <main className="w-full px-4 pt-[134px] sm:pt-[144px] pb-20 flex flex-col items-center">
+      <main className="w-full px-4 pt-[134px] sm:pt-[144px] pb-20 flex flex-col items-center gap-12 sm:gap-16">
         <HeroFriday />
+        <ServicesGrid />
       </main>
 
       <footer className="w-full border-t border-slate-200/80 bg-white py-8 px-6 text-center text-xs text-[var(--color-fg-muted)]">
