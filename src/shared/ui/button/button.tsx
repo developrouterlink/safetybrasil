@@ -1,4 +1,4 @@
-import React, { forwardRef } from 'react';
+import React, { forwardRef, type ElementType, type ReactNode } from 'react';
 import { cva } from 'class-variance-authority';
 import { clsx } from 'clsx';
 import { twMerge } from 'tailwind-merge';
@@ -41,41 +41,41 @@ export const buttonVariants = cva(
   },
 );
 
-export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
-  (
-    {
-      as: Component = 'button',
-      className,
-      variant = 'primary',
-      size = 'md',
-      isLoading = false,
-      disabled,
-      leftIcon,
-      rightIcon,
-      children,
-      ...props
-    },
-    ref,
-  ) => {
-    return (
-      <Component
-        ref={ref}
-        disabled={disabled || isLoading}
-        className={twMerge(
-          clsx(buttonVariants({ variant, size }), className),
-        )}
-        {...props}
-      >
-        {isLoading ? (
-          <span className="inline-block w-4 h-4 border-2 border-current border-t-transparent rounded-full animate-spin" />
-        ) : (
-          leftIcon
-        )}
-        {children}
-        {!isLoading && rightIcon}
-      </Component>
-    );
-  },
-);
+export const Button = forwardRef(function Button(
+  {
+    as,
+    className,
+    variant = 'primary',
+    size = 'md',
+    isLoading = false,
+    disabled,
+    leftIcon,
+    rightIcon,
+    children,
+    ...props
+  }: ButtonProps<ElementType>,
+  ref: React.ForwardedRef<HTMLElement>,
+) {
+  const Component = (as || 'button') as ElementType;
 
-Button.displayName = 'Button';
+  return (
+    <Component
+      ref={ref}
+      disabled={disabled || isLoading}
+      className={twMerge(
+        clsx(buttonVariants({ variant, size }), className),
+      )}
+      {...props}
+    >
+      {isLoading ? (
+        <span className="inline-block w-4 h-4 border-2 border-current border-t-transparent rounded-full animate-spin" />
+      ) : (
+        leftIcon
+      )}
+      {children}
+      {!isLoading && rightIcon}
+    </Component>
+  );
+}) as <T extends ElementType = 'button'>(
+  props: ButtonProps<T> & { ref?: React.Ref<HTMLElement> },
+) => ReactNode;
