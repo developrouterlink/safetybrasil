@@ -30,19 +30,16 @@ export const Header = ({
       <div
         className="w-full bg-white rounded-[20px] shadow-[0px_12px_24px_rgba(0,0,0,0.08)] px-6 py-4 flex items-center justify-between transition-all duration-300 border border-slate-100/80"
       >
-        {/* Marca / Logo */}
-        <Link href="/" className="flex items-center gap-3 group">
+        {/* Marca / Logo — apenas a logo, sem o nome */}
+        <Link href="/" className="flex items-center group" aria-label="Safety Brasil - Página Inicial">
           <Image
             src="/logo.png"
             alt="Safety Brasil"
-            width={40}
-            height={36}
-            className="h-9 w-auto object-contain transition-transform group-hover:scale-105"
+            width={50}
+            height={44}
+            className="h-10 w-auto object-contain transition-transform group-hover:scale-105"
             priority
           />
-          <span className="font-bold text-lg md:text-xl text-[var(--color-fg-heading)] tracking-tight">
-            Safety Brasil
-          </span>
         </Link>
 
         {/* Links de navegação Desktop */}
