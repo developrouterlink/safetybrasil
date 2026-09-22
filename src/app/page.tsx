@@ -12,14 +12,11 @@ import {
 export default function HomePage() {
   return (
     <div className="min-h-screen bg-[#f2f5f8] flex flex-col items-center overflow-x-clip">
-      {/* Top Header Floating Container */}
       <div className="w-full pt-8 sm:pt-10 px-4 sm:px-6 fixed top-0 left-0 right-0 z-50">
         <Header />
       </div>
 
-      {/* Main Hero Container matching Framer layout (1440px max, pt-156px, gap-56px) */}
       <main className="w-full max-w-[1440px] px-6 sm:px-12 pt-[140px] sm:pt-[156px] pb-24 flex flex-col items-center gap-14">
-        {/* Hero Content */}
         <div className="text-center max-w-3xl space-y-6">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-slate-200 shadow-xs">
             <span className="w-2 h-2 rounded-full bg-[var(--color-brand)] animate-pulse" />
@@ -46,7 +43,6 @@ export default function HomePage() {
           </div>
         </div>
 
-        {/* Quick Highlights / Cards Section */}
         <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 pt-6">
           <Card variant="bordered" className="bg-white/90 backdrop-blur-xs space-y-3 hover:shadow-md transition-shadow">
             <div className="w-10 h-10 rounded-xl bg-[var(--color-brand-soft)] text-[var(--color-brand)] flex items-center justify-center">
@@ -89,7 +85,6 @@ export default function HomePage() {
           </Card>
         </div>
 
-        {/* Clients Banner Preview */}
         <div id="clientes" className="w-full bg-white rounded-[20px] shadow-[0px_12px_24px_rgba(0,0,0,0.08)] p-8 sm:p-10 flex flex-col md:flex-row items-center justify-between gap-6 border border-slate-100">
           <div className="space-y-1 text-center md:text-left">
             <div className="flex items-center justify-center md:justify-start gap-2 text-[var(--color-brand)]">
@@ -107,7 +102,6 @@ export default function HomePage() {
         </div>
       </main>
 
-      {/* Footer */}
       <footer className="w-full border-t border-slate-200/80 bg-white py-8 px-6 text-center text-xs text-[var(--color-fg-muted)]">
         <div className="max-w-[1240px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
           <span className="font-semibold text-slate-700">Safety Brasil — Gestão e Conformidade em SST</span>

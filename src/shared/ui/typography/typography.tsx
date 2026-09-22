@@ -113,7 +113,6 @@ export const Typography = forwardRef<HTMLElement, TypographyProps>(
 
 Typography.displayName = 'Typography';
 
-// Componentes convenientes para uso rápido
 export const Heading = forwardRef<
   HTMLHeadingElement,
   Omit<TypographyProps, 'as' | 'variant'> & { level?: 1 | 2 | 3 | 4 | 5 | 6 }

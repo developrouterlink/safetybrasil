@@ -27,29 +27,22 @@ export const Header = ({
 
   return (
     <header className={twMerge(clsx('w-full max-w-[1280px] mx-auto px-4', className))}>
-      <div
-        className="w-full bg-white rounded-[20px] shadow-[0px_12px_24px_rgba(0,0,0,0.08)] px-8 py-3.5 min-h-[84px] flex items-center justify-between transition-all duration-300 border border-slate-100/90"
-      >
-        {/* Marca / Logo — ampliada com 'desde 1979' abaixo */}
+      <div className="w-full bg-white rounded-[20px] shadow-[0px_12px_24px_rgba(0,0,0,0.08)] px-8 py-3.5 min-h-[84px] flex items-center justify-between transition-all duration-300 border border-slate-100/90">
         <Link
           href="/"
-          className="flex flex-col items-center shrink-0 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-ring)] rounded-lg p-1"
-          aria-label="Safety Brasil - Desde 1979"
+          className="flex items-center shrink-0 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-ring)] rounded-lg p-1"
+          aria-label="Safety Brasil"
         >
           <Image
             src="/logo.png"
             alt="Safety Brasil"
-            width={72}
-            height={64}
+            width={76}
+            height={68}
             className="h-12 md:h-14 w-auto object-contain transition-transform group-hover:scale-105"
             priority
           />
-          <span className="text-[11px] font-medium text-slate-500 tracking-wide mt-0.5 group-hover:text-[var(--color-brand)] transition-colors">
-            desde 1979
-          </span>
         </Link>
 
-        {/* Bloco 2: Direita >>> Links de navegação e Botão CTA agrupados juntos */}
         <div className="hidden lg:flex items-center gap-8">
           <nav aria-label="Navegação principal" className="flex items-center gap-7">
             {navLinks.map((link) => (
@@ -74,7 +67,6 @@ export const Header = ({
           </Button>
         </div>
 
-        {/* Botão Mobile */}
         <button
           type="button"
           onClick={() => setIsMobileMenuOpen((prev) => !prev)}
@@ -89,7 +81,6 @@ export const Header = ({
         </button>
       </div>
 
-      {/* Menu Dropdown Mobile */}
       {isMobileMenuOpen && (
         <div className="lg:hidden mt-2 bg-white rounded-[20px] shadow-[0px_12px_24px_rgba(0,0,0,0.08)] p-6 border border-slate-100 flex flex-col space-y-3 animate-in fade-in slide-in-from-top-2 duration-200">
           {navLinks.map((link) => (
