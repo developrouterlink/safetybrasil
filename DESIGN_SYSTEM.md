@@ -76,10 +76,13 @@ A tipografia corporativa é baseada na fonte **Optimistic** com fallback no stac
 O Header segue o padrão do card flutuante arredondado do Framer / `site-isc`:
 
 ```
-┌────────────────────────────────────────────────────────────────────────┐
-│  [Logo (h-11)]      Serviços   eSocial   Clientes   Rede   Contato     [CTA Fale Conosco] │
-└────────────────────────────────────────────────────────────────────────┘
+┌────────────────────────────────────────────────────────────────────────────────────────┐
+│  [Logo (h-11)]                           Serviços   eSocial   Clientes   Rede   Contato   [CTA Fale Conosco] │
+└────────────────────────────────────────────────────────────────────────────────────────┘
 ```
+- **Disposição em 2 Blocos:** O Header é composto estritamente por dois blocos (sem `justify-between` distribuído em 3 partes):
+  1. **Bloco Esquerdo:** Logo da Safety Brasil.
+  2. **Bloco Direito:** Links de navegação agrupados diretamente ao lado do botão de CTA.
 
 ### Dimensões e Especificações do Header:
 - **Container:** `max-w-[1280px]` centralizado com `margin: 0 auto`.

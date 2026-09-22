@@ -46,21 +46,20 @@ export const Header = ({
           />
         </Link>
 
-        {/* Links de navegação Desktop — Tamanho 16px, peso medium e espaçamento elegante */}
-        <nav aria-label="Navegação principal" className="hidden lg:flex items-center gap-8">
-          {navLinks.map((link) => (
-            <Link
-              key={link.label}
-              href={link.href}
-              className="text-[16px] font-medium text-[#1c2b33] hover:text-[var(--color-brand)] transition-colors py-1.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-ring)] rounded-md"
-            >
-              {link.label}
-            </Link>
-          ))}
-        </nav>
+        {/* Bloco 2: Direita >>> Links de navegação e Botão CTA agrupados juntos */}
+        <div className="hidden lg:flex items-center gap-8">
+          <nav aria-label="Navegação principal" className="flex items-center gap-7">
+            {navLinks.map((link) => (
+              <Link
+                key={link.label}
+                href={link.href}
+                className="text-[16px] font-medium text-[#1c2b33] hover:text-[var(--color-brand)] transition-colors py-1.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-ring)] rounded-md"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </nav>
 
-        {/* Ação / CTA Desktop — Tamanho md (44px) com texto 15px destacado */}
-        <div className="hidden lg:flex items-center gap-4">
           <Button
             as={Link}
             href={ctaHref}
