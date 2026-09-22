@@ -27,7 +27,7 @@ export const Header = ({
 
   return (
     <header className={twMerge(clsx('w-full max-w-[1280px] mx-auto px-4', className))}>
-      <div className="w-full bg-white rounded-[20px] shadow-[0px_12px_24px_rgba(0,0,0,0.08)] px-8 py-3.5 min-h-[84px] flex items-center justify-between transition-all duration-300 border border-slate-100/90">
+      <div className="w-full bg-white rounded-[20px] shadow-[0px_12px_24px_rgba(0,0,0,0.08)] px-8 h-[94px] max-h-[94px] flex items-center justify-between transition-all duration-300 border border-slate-100/90">
         <Link
           href="/"
           className="flex items-center shrink-0 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-ring)] rounded-lg p-1"
@@ -36,20 +36,20 @@ export const Header = ({
           <Image
             src="/logo.png"
             alt="Safety Brasil"
-            width={76}
-            height={68}
-            className="h-12 md:h-14 w-auto object-contain transition-transform group-hover:scale-105"
+            width={84}
+            height={74}
+            className="h-[60px] md:h-[64px] w-auto object-contain transition-transform group-hover:scale-105"
             priority
           />
         </Link>
 
         <div className="hidden lg:flex items-center gap-8">
-          <nav aria-label="Navegação principal" className="flex items-center gap-7">
+          <nav aria-label="Navegação principal" className="flex items-center gap-8">
             {navLinks.map((link) => (
               <Link
                 key={link.label}
                 href={link.href}
-                className="text-[16px] font-medium text-[#1c2b33] hover:text-[var(--color-brand)] transition-colors py-1.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-ring)] rounded-md"
+                className="text-[calc(var(--framer-root-font-size,1rem)*1.2)] font-medium text-[#1c2b33] hover:text-[var(--color-brand)] transition-colors py-1.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-ring)] rounded-md"
               >
                 {link.label}
               </Link>
@@ -88,7 +88,7 @@ export const Header = ({
               key={link.label}
               href={link.href}
               onClick={() => setIsMobileMenuOpen(false)}
-              className="px-4 py-3 text-[16px] font-medium text-[#1c2b33] hover:text-[var(--color-brand)] hover:bg-slate-50 rounded-xl transition-colors"
+              className="px-4 py-3 text-[calc(var(--framer-root-font-size,1rem)*1.2)] font-medium text-[#1c2b33] hover:text-[var(--color-brand)] hover:bg-slate-50 rounded-xl transition-colors"
             >
               {link.label}
             </Link>
