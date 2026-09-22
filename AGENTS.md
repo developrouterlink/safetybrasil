@@ -17,4 +17,4 @@ Toda IA ou desenvolvedor deve ler e seguir rigorosamente as diretrizes documenta
 2. **Kebab-case lowercase:** Todos os arquivos e pastas devem ser lowercase com hífen (`kebab-case`) e conter o domínio no nome.
 3. **Subpasta `hooks/` obrigatória:** Cada componente e cada página deve ter sua própria subpasta `hooks/` com `index.ts`.
 4. **Camada HTTP e Schemas:** Use sempre `httpClient` de `@shared/http` (nunca axios direto) e derive tipos com `z.infer`.
-5. **Tipografia e Design System:** Use o componente reutilizável `<Typography />`, `<Heading />` e `<Text />` de `@shared/ui`.
+5. **Tipografia e Design System:** Use o componente reutilizável `<Typography />`, `<Heading />` e `<Text />` de `@shared/ui` e siga os padrões visuais documentados em [DESIGN_SYSTEM.md](file:///home/yan404dev/dev/router-link/safety-brasil/DESIGN_SYSTEM.md).
