@@ -28,22 +28,25 @@ export const Header = ({
   return (
     <header className={twMerge(clsx('w-full max-w-[1280px] mx-auto px-4', className))}>
       <div
-        className="w-full bg-white rounded-[20px] shadow-[0px_12px_24px_rgba(0,0,0,0.08)] px-8 py-4 min-h-[78px] flex items-center justify-between transition-all duration-300 border border-slate-100/90"
+        className="w-full bg-white rounded-[20px] shadow-[0px_12px_24px_rgba(0,0,0,0.08)] px-8 py-3.5 min-h-[84px] flex items-center justify-between transition-all duration-300 border border-slate-100/90"
       >
-        {/* Marca / Logo — apenas a logo oficial, proporcional e destacada */}
+        {/* Marca / Logo — ampliada com 'desde 1979' abaixo */}
         <Link
           href="/"
-          className="flex items-center shrink-0 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-ring)] rounded-lg p-1"
-          aria-label="Safety Brasil - Início"
+          className="flex flex-col items-center shrink-0 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-ring)] rounded-lg p-1"
+          aria-label="Safety Brasil - Desde 1979"
         >
           <Image
             src="/logo.png"
             alt="Safety Brasil"
-            width={60}
-            height={52}
-            className="h-11 md:h-12 w-auto object-contain transition-transform group-hover:scale-105"
+            width={72}
+            height={64}
+            className="h-12 md:h-14 w-auto object-contain transition-transform group-hover:scale-105"
             priority
           />
+          <span className="text-[11px] font-medium text-slate-500 tracking-wide mt-0.5 group-hover:text-[var(--color-brand)] transition-colors">
+            desde 1979
+          </span>
         </Link>
 
         {/* Bloco 2: Direita >>> Links de navegação e Botão CTA agrupados juntos */}
