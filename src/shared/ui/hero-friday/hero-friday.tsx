@@ -16,9 +16,9 @@ export const HeroFriday = ({
   ctaHref = '#servicos',
 }: HeroFridayProps) => {
   return (
-    <section className={twMerge(clsx('w-full max-w-[1280px] mx-auto', className))}>
-      <div className="w-full min-h-[592px] lg:h-[592px] bg-[#f2f5f8] rounded-tr-[24px] rounded-br-[24px] rounded-bl-[24px] relative overflow-hidden flex flex-col lg:block">
-        <div className="order-2 lg:order-none relative w-full h-[360px] sm:h-[420px] lg:h-full lg:absolute lg:inset-0 rounded-tr-[24px] rounded-br-[24px] rounded-bl-[24px] overflow-hidden">
+    <section className={twMerge(clsx('w-full max-w-[1280px] lg:mt-4 mx-auto', className))}>
+      <div className="w-full min-h-148 lg:h-[592px] bg-[#f2f5f8] rounded-tr-3xl rounded-br-3xl rounded-bl-3xl relative overflow-hidden flex flex-col lg:block">
+        <div className="order-2 lg:order-0 relative w-full h-90 sm:h-105 lg:h-full lg:absolute lg:inset-0 rounded-tr-3xl rounded-br-3xl rounded-bl-3xl overflow-hidden">
           <div className="absolute inset-0 w-full h-full">
             <Image
               src="/hero.png"

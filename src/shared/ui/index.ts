@@ -4,3 +4,6 @@ export * from './card';
 export * from './header';
 export * from './hero-friday';
 export * from './services-grid';
+export * from './market-section';
+export * from './services-table';
+export * from './footer';

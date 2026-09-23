@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Funnel+Display:wght@400;500;600;700&family=Host+Grotesk:wght@400;500;600&display=swap');
 @import "tailwindcss";
 @import "../styles/tokens.css";
 @import "../styles/theme.css";
@@ -6,42 +7,44 @@
   color-scheme: light;
 }
 
-html {
-  scroll-behavior: smooth;
-  overflow-x: clip;
-}
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    overflow-x: clip;
+  }
 
-body {
-  position: relative;
-  min-height: 100dvh;
-  overflow-x: clip;
-  background: var(--color-bg);
-  color: var(--color-fg);
-  font-family: var(--font-sans);
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 1.5;
-  letter-spacing: normal;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
-}
+  body {
+    position: relative;
+    min-height: 100dvh;
+    overflow-x: clip;
+    background: var(--color-bg);
+    color: var(--color-fg);
+    font-family: var(--font-sans);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-sans);
-  font-weight: 700;
-  color: var(--color-fg-heading);
-  letter-spacing: -0.02em;
-  line-height: 1.15;
-}
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-sans);
+    font-weight: 700;
+    color: var(--color-fg-heading);
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+  }
 
-p {
-  font-family: var(--font-sans);
-  font-weight: 400;
-  color: var(--color-fg-muted);
-  line-height: 1.6;
-}
+  p {
+    font-family: var(--font-sans);
+    font-weight: 400;
+    color: var(--color-fg-muted);
+    line-height: 1.6;
+  }
 
-a {
-  text-decoration: none;
+  a {
+    text-decoration: none;
+  }
 }

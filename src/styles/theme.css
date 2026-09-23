@@ -16,7 +16,6 @@
   --color-border-strong: var(--color-border-strong);
   --color-border-hairline: var(--color-border-hairline);
 
-  /* shadcn token aliases */
   --color-background: var(--color-bg);
   --color-foreground: var(--color-fg);
   --color-card: var(--color-surface);
@@ -36,7 +35,6 @@
   --color-input: var(--color-border);
   --color-ring: var(--color-ring);
 
-  /* Meta Brand Colors */
   --color-meta-blue-50: var(--color-meta-blue-50);
   --color-meta-blue-100: var(--color-meta-blue-100);
   --color-meta-blue-200: var(--color-meta-blue-200);
