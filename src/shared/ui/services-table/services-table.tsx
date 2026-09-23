@@ -23,16 +23,26 @@ export const ServicesTable = (props: ServicesTableProps) => {
         clsx('w-full max-w-[1280px] mx-auto flex flex-col items-start py-2', className)
       )}
     >
-      <div className="w-full max-w-[560px] bg-white rounded-t-[20px] px-6 sm:px-8 py-6 sm:py-7 flex flex-row items-center justify-start gap-2.5 relative">
+      <div className="w-full sm:w-fit bg-white rounded-t-[24px] px-6 sm:px-8 py-6 sm:py-7 flex flex-row items-center justify-start gap-2.5 relative z-10">
         <Heading
           level={2}
           className="text-xl sm:text-2xl md:text-[26px] font-bold text-[var(--color-fg-heading)] text-left tracking-tight leading-snug"
         >
           {title}
         </Heading>
+
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          className="hidden sm:block absolute -right-[24px] bottom-0 pointer-events-none fill-white"
+          aria-hidden="true"
+        >
+          <path d="M 0 0 L 0 24 L 24 24 C 10.745 24 0 13.255 0 0 Z" />
+        </svg>
       </div>
 
-      <div className="w-full bg-white rounded-b-[20px] md:rounded-tr-[20px] relative overflow-hidden">
+      <div className="w-full bg-white rounded-b-[24px] sm:rounded-tr-[24px] relative overflow-hidden">
         <div className="w-full flex items-center justify-between px-6 sm:px-8 py-5 sm:py-6 bg-white">
           <div className="flex-1" />
 
