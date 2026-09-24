@@ -9,7 +9,7 @@ export default function ESocialPage() {
 
       <main className="w-full px-4 pt-[134px] sm:pt-[144px] pb-20 flex flex-col items-center gap-12 sm:gap-16">
         <ServicesGrid variant="esocial" />
-        <ServicesTable />
+        <ServicesTable variant="esocial" />
       </main>
 
       <Footer />

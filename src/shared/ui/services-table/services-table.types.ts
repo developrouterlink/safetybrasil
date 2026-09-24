@@ -9,6 +9,7 @@ export interface ServiceBenefitItem {
 export interface ServicesTableProps {
   id?: string;
   className?: string;
+  variant?: 'default' | 'esocial';
   title?: string;
   primaryColumnTitle?: string;
   secondaryColumnTitle?: string;

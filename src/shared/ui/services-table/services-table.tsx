@@ -1,6 +1,7 @@
 import { Heading, Text } from '../typography';
+import type { ServicesTableProps, ServiceBenefitItem } from './services-table.types';
 
-const benefits = [
+const defaultBenefits: ServiceBenefitItem[] = [
   {
     id: 'software',
     title: 'Software Integrado (SOC)',
@@ -45,7 +46,109 @@ const benefits = [
   },
 ];
 
-export const ServicesTable = () => {
+const esocialBenefits: ServiceBenefitItem[] = [
+  {
+    id: 'pcmso',
+    title: 'PCMSO (NR-7) e Implantação de Ambulatório Médico',
+    description:
+      'Coordenação médica, realização de exames clínicos e complementares, locação de médicos e enfermeiros, e plano de ações personalizado.',
+    safetyIncluded: true,
+    othersIncluded: false,
+  },
+  {
+    id: 'pgr',
+    title: 'PGR (NR-1) — Programa de Gerenciamento de Riscos',
+    description:
+      'Antecipação, reconhecimento, avaliação e controle contínuo dos riscos ambientais com plano de ação preventivo obrigatório.',
+    safetyIncluded: true,
+    othersIncluded: false,
+  },
+  {
+    id: 'ltcat',
+    title: 'LTCAT (NR-15/16) — Condições Ambientais do Trabalho',
+    description:
+      'Documentação conclusiva dos agentes nocivos no ambiente de trabalho para fins previdenciários e envio do evento S-2240 ao eSocial.',
+    safetyIncluded: true,
+    othersIncluded: false,
+  },
+  {
+    id: 'insalubridade',
+    title: 'Laudo de Insalubridade — Ruído, Físico e Químico (NR-15)',
+    description:
+      'Avaliação da exposição a agentes nocivos e definição de alternativas técnicas para eliminar ou reduzir adicionais indevidos.',
+    safetyIncluded: true,
+    othersIncluded: false,
+  },
+  {
+    id: 'periculosidade',
+    title: 'Laudo de Periculosidade (NR-16)',
+    description:
+      'Identificação de atividades periculosas com explosivos, inflamáveis, eletricidade e radiação para prevenção de acidentes e amparo legal.',
+    safetyIncluded: true,
+    othersIncluded: false,
+  },
+  {
+    id: 'auditoria-nrs',
+    title: 'Auditoria de NRs (Portaria 3.214/78)',
+    description:
+      'Análise detalhada da empresa para identificar pontos de melhoria e conformidades, evitando multas e processos trabalhistas.',
+    safetyIncluded: true,
+    othersIncluded: false,
+  },
+  {
+    id: 'ergonomia',
+    title: 'Avaliação Ergonômica (NR-17)',
+    description:
+      'Análise de postos de trabalho focada em posturas, fadiga, repetitividade e conforto térmico para produtividade e bem-estar.',
+    safetyIncluded: true,
+    othersIncluded: true,
+  },
+  {
+    id: 'cipa',
+    title: 'Implantação, Processo Eleitoral e Treinamento de CIPA (NR-5)',
+    description:
+      'Pioneirismo em formação prevencionista: gestão do processo eleitoral, atas mensais e capacitação completa de cipeiros.',
+    safetyIncluded: true,
+    othersIncluded: true,
+  },
+  {
+    id: 'eletrica',
+    title: 'Instalações Elétricas e Aterramento de Pára-Raios (NR-10)',
+    description:
+      'Laudo técnico das instalações com testes e emissão de ART por Engenheiro Eletricista habilitado.',
+    safetyIncluded: true,
+    othersIncluded: false,
+  },
+  {
+    id: 'caldeiras',
+    title: 'Compressores e Caldeiras (NR-13)',
+    description:
+      'Inspeção por Engenheiro Mecânico, análise do Livro de Manutenções, validação de testes e novos registros técnicos.',
+    safetyIncluded: true,
+    othersIncluded: false,
+  },
+  {
+    id: 'software-online',
+    title: 'Software de Gestão Integrado aos Servidores Safety Brasil®',
+    description:
+      'Gestão ambulatorial online, suporte a exames clínicos e complementares, e integração direta com a área de Recursos Humanos.',
+    safetyIncluded: true,
+    othersIncluded: false,
+  },
+];
+
+export const ServicesTable = ({
+  variant = 'default',
+  title,
+  primaryColumnTitle = 'Safety Brasil',
+  secondaryColumnTitle = 'Outras Empresas',
+  benefits,
+}: ServicesTableProps) => {
+  const resolvedTitle =
+    title ?? (variant === 'esocial' ? 'Conformidade eSocial e NRs' : 'Por que escolher a Safety?');
+  const resolvedBenefits =
+    benefits ?? (variant === 'esocial' ? esocialBenefits : defaultBenefits);
+
   return (
     <section className="w-full max-w-[1280px] mx-auto flex flex-col items-start py-2">
       <div className="w-fit max-w-[calc(100%-28px)] bg-white rounded-t-[20px] sm:rounded-t-[24px] px-5 sm:px-8 py-4 sm:py-7 flex flex-row items-center justify-start gap-2.5 relative z-10">
@@ -53,7 +156,7 @@ export const ServicesTable = () => {
           level={2}
           className="text-lg sm:text-2xl md:text-[26px] font-bold text-[var(--color-fg-heading)] text-left tracking-tight leading-snug"
         >
-          Por que escolher a Safety?
+          {resolvedTitle}
         </Heading>
 
         <svg
@@ -74,20 +177,20 @@ export const ServicesTable = () => {
           <div className="flex items-center gap-2 sm:gap-6 md:gap-8 shrink-0">
             <div className="w-20 sm:w-28 md:w-44 text-center">
               <span className="text-[12px] sm:text-sm md:text-base font-bold text-[var(--color-brand)]">
-                Safety Brasil
+                {primaryColumnTitle}
               </span>
             </div>
 
             <div className="w-20 sm:w-28 md:w-44 text-center">
               <span className="text-[12px] sm:text-sm md:text-base font-semibold text-[var(--color-fg-muted)]">
-                Outras Empresas
+                {secondaryColumnTitle}
               </span>
             </div>
           </div>
         </div>
 
         <div className="w-full">
-          {benefits.map((benefit, index) => {
+          {resolvedBenefits.map((benefit, index) => {
             const isOdd = index % 2 === 1;
 
             return (
