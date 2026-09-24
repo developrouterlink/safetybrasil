@@ -48,7 +48,6 @@ const benefits = [
 export const ServicesTable = () => {
   return (
     <section className="w-full max-w-[1280px] mx-auto flex flex-col items-start py-2">
-      {/* Aba de Título: Formato de aba com curva invertida mantida no mobile */}
       <div className="w-fit max-w-[calc(100%-28px)] bg-white rounded-t-[20px] sm:rounded-t-[24px] px-5 sm:px-8 py-4 sm:py-7 flex flex-row items-center justify-start gap-2.5 relative z-10">
         <Heading
           level={2}
@@ -57,7 +56,6 @@ export const ServicesTable = () => {
           Por que escolher a Safety?
         </Heading>
 
-        {/* Curva de transição invertida conectando a aba ao topo da tabela */}
         <svg
           width="20"
           height="20"
@@ -69,9 +67,7 @@ export const ServicesTable = () => {
         </svg>
       </div>
 
-      {/* Corpo da Tabela com cantos arredondados responsivos */}
       <div className="w-full bg-white rounded-b-[20px] sm:rounded-b-[24px] rounded-tr-[20px] sm:rounded-tr-[24px] relative overflow-hidden">
-        {/* Cabeçalho da Tabela */}
         <div className="w-full flex items-center justify-between px-4 sm:px-8 py-4 sm:py-6 bg-white border-b border-slate-100/80">
           <div className="flex-1" />
 
@@ -90,7 +86,6 @@ export const ServicesTable = () => {
           </div>
         </div>
 
-        {/* Linhas de Benefícios */}
         <div className="w-full">
           {benefits.map((benefit, index) => {
             const isOdd = index % 2 === 1;
