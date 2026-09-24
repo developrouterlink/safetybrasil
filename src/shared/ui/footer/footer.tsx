@@ -1,13 +1,7 @@
-'use client';
-
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { clsx } from 'clsx';
-import { twMerge } from 'tailwind-merge';
 import { MapPin, Phone, Mail } from 'lucide-react';
-import { useFooter } from './hooks';
-import type { FooterProps } from './footer.types';
 
 const socialNetworks = [
   {
@@ -48,27 +42,20 @@ const socialNetworks = [
   },
 ];
 
-export const Footer = (props: FooterProps) => {
-  const {
-    id,
-    className,
-    phone,
-    email,
-    addressLine1,
-    addressLine2,
-    addressLine3,
-    links,
-  } = useFooter(props);
+const links = [
+  { label: 'Home', href: '/' },
+  { label: 'Sobre', href: '/#mercado' },
+  { label: 'Serviços', href: '/#servicos' },
+  { label: 'Treinamentos', href: '/#servicos' },
+  { label: 'eSocial', href: '/esocial' },
+  { label: 'Contato', href: '/#contato' },
+];
 
+export const Footer = () => {
   return (
     <footer
-      id={id}
-      className={twMerge(
-        clsx(
-          'w-full bg-[#F4F6F8] pt-16 sm:pt-24 pb-12 text-[#1c1c1c]',
-          className
-        )
-      )}
+      id="contato"
+      className="w-full bg-[#f2f5f8] text-[#1c1c1c] pt-20 pb-12 overflow-hidden"
       style={{ fontFamily: "'Funnel Display', sans-serif" }}
     >
       <div className="w-full px-6 sm:px-12 lg:px-16 xl:px-20">
@@ -141,29 +128,29 @@ export const Footer = (props: FooterProps) => {
               <div className="flex items-start gap-3">
                 <MapPin className="w-6 h-6 text-[var(--color-brand)] shrink-0 mt-1" />
                 <div className="flex flex-col">
-                  <span className="font-semibold text-[#1c1c1c]">{addressLine1}</span>
-                  <span>{addressLine2}</span>
-                  <span className="text-[16px] text-slate-500 mt-0.5">{addressLine3}</span>
+                  <span className="font-semibold text-[#1c1c1c]">Av. Senador Casemiro da Rocha, 609 - 10º andar</span>
+                  <span>Bairro Mirandópolis - São Paulo/SP - CEP 04047-001</span>
+                  <span className="text-[16px] text-slate-500 mt-0.5">Próximo ao metrô Praça da Árvore.</span>
                 </div>
               </div>
 
               <div className="flex items-center gap-3 pt-1">
                 <Phone className="w-5 h-5 text-[var(--color-brand)] shrink-0" />
                 <a
-                  href={`tel:${phone.replace(/\D/g, '')}`}
+                  href="tel:1155810202"
                   className="font-semibold text-[18px] sm:text-[20px] text-[#1c1c1c] hover:text-[var(--color-brand)] transition-colors"
                 >
-                  {phone}
+                  11 5581-0202
                 </a>
               </div>
 
               <div className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-[var(--color-brand)] shrink-0" />
                 <a
-                  href={`mailto:${email}`}
+                  href="mailto:comercial@safetybrasil.com.br"
                   className="font-normal text-[17px] sm:text-[19px] text-[#1c1c1c] hover:text-[var(--color-brand)] transition-colors break-all"
                 >
-                  {email}
+                  comercial@safetybrasil.com.br
                 </a>
               </div>
             </div>

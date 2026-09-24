@@ -27,7 +27,7 @@ export const Header = ({
 
   return (
     <header className={twMerge(clsx('w-full max-w-[1280px] mx-auto', className))}>
-      <div className="w-full bg-white rounded-[20px] shadow-[0px_12px_24px_rgba(0,0,0,0.08)] px-8 h-[94px] max-h-[94px] flex items-center justify-between transition-all duration-300 border border-slate-100/90">
+      <div className="w-full bg-white rounded-[20px] shadow-[0px_12px_24px_rgba(0,0,0,0.08)] px-5 sm:px-8 h-[94px] max-h-[94px] flex items-center justify-between transition-all duration-300 border border-slate-100/90">
         <Link
           href="/"
           className="flex items-center shrink-0 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-ring)] rounded-lg p-1"

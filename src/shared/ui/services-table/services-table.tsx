@@ -1,66 +1,96 @@
-'use client';
-
-import { clsx } from 'clsx';
-import { twMerge } from 'tailwind-merge';
 import { Heading, Text } from '../typography';
-import { useServicesTable } from './hooks';
-import type { ServicesTableProps } from './services-table.types';
 
-export const ServicesTable = (props: ServicesTableProps) => {
-  const {
-    id,
-    className,
-    title,
-    primaryColumnTitle,
-    secondaryColumnTitle,
-    benefits,
-  } = useServicesTable(props);
+const benefits = [
+  {
+    id: 'software',
+    title: 'Software Integrado (SOC)',
+    description: 'Gestão 100% online de dados ocupacionais, relatórios e transmissão em tempo real.',
+    safetyIncluded: true,
+    othersIncluded: false,
+  },
+  {
+    id: 'esocial',
+    title: 'Envio de Eventos para o eSocial',
+    description: 'Transmissão segura de todos os eventos de SST com protocolo e validação jurídica.',
+    safetyIncluded: true,
+    othersIncluded: false,
+  },
+  {
+    id: 'rede',
+    title: 'Rede Credenciada Nacional',
+    description: 'Clínicas e laboratórios parceiros em todos os estados do Brasil.',
+    safetyIncluded: true,
+    othersIncluded: true,
+  },
+  {
+    id: 'laudos',
+    title: 'Laudos com Assinatura Digital e ART',
+    description: 'Documentos emitidos com validade jurídica garantida por engenheiros e médicos registrados.',
+    safetyIncluded: true,
+    othersIncluded: false,
+  },
+  {
+    id: 'atendimento',
+    title: 'Atendimento Consultivo Humanizado',
+    description: 'Especialistas dedicados para tirar dúvidas rápidas e acompanhar auditorias e fiscalizações.',
+    safetyIncluded: true,
+    othersIncluded: false,
+  },
+  {
+    id: 'treinamentos',
+    title: 'Treinamentos Online e Presenciais',
+    description: 'Plataforma completa de capacitação de colaboradores com certificados em conformidade com as NRs.',
+    safetyIncluded: true,
+    othersIncluded: true,
+  },
+];
 
+export const ServicesTable = () => {
   return (
-    <section
-      id={id}
-      className={twMerge(
-        clsx('w-full max-w-[1280px] mx-auto flex flex-col items-start py-2', className)
-      )}
-    >
-      <div className="w-full sm:w-fit bg-white rounded-t-[24px] px-6 sm:px-8 py-6 sm:py-7 flex flex-row items-center justify-start gap-2.5 relative z-10">
+    <section className="w-full max-w-[1280px] mx-auto flex flex-col items-start py-2">
+      {/* Aba de Título: Formato de aba com curva invertida mantida no mobile */}
+      <div className="w-fit max-w-[calc(100%-28px)] bg-white rounded-t-[20px] sm:rounded-t-[24px] px-5 sm:px-8 py-4 sm:py-7 flex flex-row items-center justify-start gap-2.5 relative z-10">
         <Heading
           level={2}
-          className="text-xl sm:text-2xl md:text-[26px] font-bold text-[var(--color-fg-heading)] text-left tracking-tight leading-snug"
+          className="text-lg sm:text-2xl md:text-[26px] font-bold text-[var(--color-fg-heading)] text-left tracking-tight leading-snug"
         >
-          {title}
+          Por que escolher a Safety?
         </Heading>
 
+        {/* Curva de transição invertida conectando a aba ao topo da tabela */}
         <svg
-          width="24"
-          height="24"
+          width="20"
+          height="20"
           viewBox="0 0 24 24"
-          className="hidden sm:block absolute -right-[24px] bottom-0 pointer-events-none fill-white"
+          className="block absolute -right-[20px] sm:-right-[24px] bottom-0 pointer-events-none fill-white sm:w-6 sm:h-6"
           aria-hidden="true"
         >
           <path d="M 0 0 L 0 24 L 24 24 C 10.745 24 0 13.255 0 0 Z" />
         </svg>
       </div>
 
-      <div className="w-full bg-white rounded-b-[24px] sm:rounded-tr-[24px] relative overflow-hidden">
-        <div className="w-full flex items-center justify-between px-6 sm:px-8 py-5 sm:py-6 bg-white">
+      {/* Corpo da Tabela com cantos arredondados responsivos */}
+      <div className="w-full bg-white rounded-b-[20px] sm:rounded-b-[24px] rounded-tr-[20px] sm:rounded-tr-[24px] relative overflow-hidden">
+        {/* Cabeçalho da Tabela */}
+        <div className="w-full flex items-center justify-between px-4 sm:px-8 py-4 sm:py-6 bg-white border-b border-slate-100/80">
           <div className="flex-1" />
 
-          <div className="flex items-center gap-4 sm:gap-8 shrink-0">
-            <div className="w-24 sm:w-32 md:w-44 text-center">
-              <span className="text-xs sm:text-sm md:text-base font-bold text-[var(--color-brand)]">
-                {primaryColumnTitle}
+          <div className="flex items-center gap-2 sm:gap-6 md:gap-8 shrink-0">
+            <div className="w-20 sm:w-28 md:w-44 text-center">
+              <span className="text-[12px] sm:text-sm md:text-base font-bold text-[var(--color-brand)]">
+                Safety Brasil
               </span>
             </div>
 
-            <div className="w-24 sm:w-32 md:w-44 text-center">
-              <span className="text-xs sm:text-sm md:text-base font-semibold text-[var(--color-fg-muted)]">
-                {secondaryColumnTitle}
+            <div className="w-20 sm:w-28 md:w-44 text-center">
+              <span className="text-[12px] sm:text-sm md:text-base font-semibold text-[var(--color-fg-muted)]">
+                Outras Empresas
               </span>
             </div>
           </div>
         </div>
 
+        {/* Linhas de Benefícios */}
         <div className="w-full">
           {benefits.map((benefit, index) => {
             const isOdd = index % 2 === 1;
@@ -68,34 +98,31 @@ export const ServicesTable = (props: ServicesTableProps) => {
             return (
               <div
                 key={benefit.id}
-                className={twMerge(
-                  clsx(
-                    'w-full flex items-center justify-between px-6 sm:px-8 py-5 sm:py-6 transition-colors',
-                    isOdd ? 'bg-[#f2f5f8]' : 'bg-white'
-                  )
-                )}
+                className={`w-full flex items-center justify-between px-4 sm:px-8 py-4 sm:py-6 transition-colors ${
+                  isOdd ? 'bg-[#f2f5f8]' : 'bg-white'
+                }`}
               >
-                <div className="flex-1 pr-4 sm:pr-8">
+                <div className="flex-1 pr-3 sm:pr-8 min-w-0">
                   <Text
                     variant="body"
-                    className="text-sm sm:text-base font-semibold text-[var(--color-fg-heading)] leading-snug"
+                    className="text-xs sm:text-base font-semibold text-[var(--color-fg-heading)] leading-snug"
                   >
                     {benefit.title}
                   </Text>
                   {benefit.description && (
-                    <span className="block text-xs sm:text-sm text-[var(--color-fg-muted)] mt-1 font-normal leading-relaxed">
+                    <span className="block text-[11px] sm:text-sm text-[var(--color-fg-muted)] mt-1 font-normal leading-relaxed">
                       {benefit.description}
                     </span>
                   )}
                 </div>
 
-                <div className="flex items-center gap-4 sm:gap-8 shrink-0">
-                  <div className="w-24 sm:w-32 md:w-44 flex items-center justify-center">
+                <div className="flex items-center gap-2 sm:gap-6 md:gap-8 shrink-0">
+                  <div className="w-20 sm:w-28 md:w-44 flex items-center justify-center">
                     {benefit.safetyIncluded ? (
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 24 24"
-                        className="w-6 h-6 sm:w-7 sm:h-7 shrink-0 transition-transform duration-200 hover:scale-110"
+                        className="w-5 h-5 sm:w-7 sm:h-7 shrink-0 transition-transform duration-200 hover:scale-110"
                         aria-label="Incluso na Safety Brasil"
                       >
                         <path
@@ -107,7 +134,7 @@ export const ServicesTable = (props: ServicesTableProps) => {
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 24 24"
-                        className="w-5 h-5 sm:w-6 sm:h-6 shrink-0"
+                        className="w-4 h-4 sm:w-6 sm:h-6 shrink-0"
                         aria-label="Não incluso"
                       >
                         <path
@@ -118,12 +145,12 @@ export const ServicesTable = (props: ServicesTableProps) => {
                     )}
                   </div>
 
-                  <div className="w-24 sm:w-32 md:w-44 flex items-center justify-center">
+                  <div className="w-20 sm:w-28 md:w-44 flex items-center justify-center">
                     {benefit.othersIncluded ? (
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 24 24"
-                        className="w-6 h-6 sm:w-7 sm:h-7 shrink-0"
+                        className="w-5 h-5 sm:w-7 sm:h-7 shrink-0"
                         aria-label="Incluso"
                       >
                         <path
@@ -135,7 +162,7 @@ export const ServicesTable = (props: ServicesTableProps) => {
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 24 24"
-                        className="w-5 h-5 sm:w-6 sm:h-6 shrink-0"
+                        className="w-4 h-4 sm:w-6 sm:h-6 shrink-0"
                         aria-label="Não incluso em outras empresas"
                       >
                         <path
