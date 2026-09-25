@@ -1,4 +1,4 @@
-# Safety Brasil
+# Safety Brasil 
 
 Portal institucional e plataforma da **Safety Brasil** — Soluções integradas em Segurança e Saúde no Trabalho, Meio Ambiente e Conformidade Legal com mais de 45 anos de atuação.
 
