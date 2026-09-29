@@ -10,18 +10,18 @@ import { twMerge } from 'tailwind-merge';
 import type { HeaderProps, HeaderNavLink } from './header.types';
 
 const defaultNavLinks: HeaderNavLink[] = [
-  { label: 'Serviços', href: '#servicos' },
-  { label: 'eSocial', href: '#esocial' },
-  { label: 'Clientes', href: '#clientes' },
-  { label: 'Rede Credenciada', href: '#rede-credenciada' },
-  { label: 'Contato', href: '#contato' },
+  { label: 'Serviços', href: '/#servicos' },
+  { label: 'eSocial', href: '/esocial' },
+  { label: 'Clientes', href: '/clientes' },
+  { label: 'Rede Credenciada', href: '/#rede-credenciada' },
+  { label: 'Contato', href: '/#contato' },
 ];
 
 export const Header = ({
   className,
   navLinks = defaultNavLinks,
   ctaLabel = 'Fale Conosco',
-  ctaHref = '#contato',
+  ctaHref = '/#contato',
 }: HeaderProps) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
